@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEAR</title>
+  <style>
+    #head {
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #leftEar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      left: 10%;
+    }
+
+    #leftEar::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: white;
+    }
+
+    #rightEar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      right: 10%;
+    }
+
+    #rightEar::before {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: white;
+
+    }
+
+    #leftEye {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      left: 30%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+    }
+
+    #leftEye::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    #rightEye {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      right: 30%;
+      top: 30%;
+      transform: translate(50%, -50%);
+    }
+
+    #rightEye::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    #boxMouthNose {
+      width: 45%;
+      height: 30%;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #mouthNose {
+      width: 60%;
+      height: 35%;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translateX(-50%);
+    }
+
+    #mouthNose::before {
+      content: "";
+      position: absolute;
+      width: 35%;
+      height: 60%;
+      background-color: #000;
+      border-radius: 50%;
+      top: -110%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #leftBlush {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      left: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #rightBlush {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      right: -5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #leftChest {
+      width: 12%;
+      height: 12%;
+      background-image: linear-gradient(to right top, black 50%, white 50%);
+      position: absolute;
+      bottom: 10%;
+      left: 26%;
+    }
+
+    #leftChest::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to left bottom, black 50%, white 50%);
+      position: absolute;
+      left: 100%;
+    }
+
+    #boxChest {
+      width: 35%;
+      height: 10%;
+      position: absolute;
+      background-color: white;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+
+    }
+
+    #boxChest::before {
+      content: "";
+      position: absolute;
+      width: 33.333%;
+      height: 100%;
+      background-image: linear-gradient(to right top, black 50%, white 50%);
+    }
+
+    #boxChest::after {
+      content: "";
+      position: absolute;
+      width: 33.333%;
+      height: 100%;
+      right: 0%;
+      background-image: linear-gradient(to left top, black 50%, white 50%);
+    }
+
+    #mid {
+      width: 11.666%;
+      height: 10%;
+      background-color: white;
+      left: 50%;
+      bottom: 10%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+
+    #mid::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-color: white;
+      background-image: linear-gradient(to left bottom, black 50%, white 50%);
+    }
+
+    #mid::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      right: 0%;
+      background-color: white;
+      background-image: linear-gradient(to right bottom, black 50%, white 50%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 頭 -->
+  <div id="head">
+    <!-- 耳朵 -->
+    <div id="leftEar"></div>
+    <div id="rightEar"></div>
+    <!-- 眼睛 -->
+    <div id="leftEye"></div>
+    <div id="rightEye"></div>
+    <!-- 嘴巴、鼻子區塊 -->
+    <div id="boxMouthNose">
+      <div id="mouthNose"></div>
+    </div>
+    <!-- 腮紅 -->
+    <div id="leftBlush"></div>
+    <div id="rightBlush"></div>
+    <!-- 胸區塊 -->
+    <div id="boxChest"></div>
+    <div id="mid"></div>
+  </div>
+</body>
+
+</html>
